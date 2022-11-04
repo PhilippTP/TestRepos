@@ -1,0 +1,9 @@
+{
+	"name": "TestDFTP",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "bb0b4fa7-250b-4d17-abea-55b27d1cecb8",
+		"tenantId": "c7192137-4b07-4635-b7c9-6ea39f650146"
+	}
+}
