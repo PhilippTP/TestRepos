@@ -1,0 +1,27 @@
+# -*- coding: utf-8 -*-
+# Load libraries
+import pandas as pd
+import pyodbc
+
+
+# Connect to SQL DB
+server = 'azwetpdb001sql.database.windows.net'
+database = 'AzWETPDB001SQLTest'
+username = 'SQLAdmin'
+password = '{Aw;_qqfo2934.qdol}'
+driver= '{ODBC Driver 17 for SQL Server}'
+
+# Create cursor
+cnxn = pyodbc.connect('DRIVER='+driver+';SERVER=tcp:'+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password)
+cursor = cnxn.cursor()
+
+cursor.execute("SELECT Top 10 [SepalLength], [SepalWidth], [Species] FROM [dbo].[iris]")
+
+records= cursor.fetchall()
+
+
+for row in records:
+    cursor.execute("INSERT INTO [dbo].[output] (Column1, Column2, Column3) VALUES {}".format(row))
+
+
+cnxn.commit()
