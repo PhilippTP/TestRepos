@@ -1,0 +1,16 @@
+{
+	"name": "AzureBatch2",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBatch",
+		"typeProperties": {
+			"batchUri": "https://azwetpbatchtest.westeurope.batch.azure.com",
+			"poolName": "TestpoolDemo",
+			"accountName": "azwetpbatchtest",
+			"linkedServiceName": {
+				"referenceName": "AzureBlobStorage1",
+				"type": "LinkedServiceReference"
+			}
+		}
+	}
+}
